@@ -1,0 +1,42 @@
+.header {
+    height: 100vh;
+    background-image: url('../../img/hero33.jpg');
+    background-size: cover;
+    // background-position: top;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    padding: 1rem;
+
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), //For safari
+    only screen and(min-width: 120em)  {
+        background-image: url('../../img/hero33.jpg');
+    }
+    
+    &__logo-box{
+        position: absolute;
+        top: 1rem;
+        left: 20rem;
+
+                    @include respond(med-desktop) {
+                        position: relative;
+                        top: 0rem;
+                        left: 0rem;
+                    }
+    }
+
+    &__logo {
+        height: 17rem;
+        transition: all .4s;
+
+        &--animated {
+            animation: moveInTop .5s ease-out .75s;
+            animation-fill-mode: backwards;
+        }
+    }
+}
